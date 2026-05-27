@@ -1,0 +1,156 @@
+---
+import overviewImage from "../../assets/images/image1.jpeg";
+import logo from "../../assets/logos/mptc.png";
+
+const highlights = [
+  {
+    title: "Discover",
+    text: "New talents",
+    icon: "rocket",
+  },
+  {
+    title: "Develop",
+    text: "Practical skills",
+    icon: "user",
+  },
+  {
+    title: "Represent",
+    text: "Cambodia globally",
+    icon: "network",
+  },
+];
+---
+
+<section
+  id="overview"
+  class="relative overflow-hidden bg-[#f7fbff] px-6 py-24 text-[#07143a] sm:px-10 lg:px-16"
+>
+  <div class="absolute inset-0 opacity-70">
+    <div
+      class="absolute left-0 top-0 h-72 w-72 bg-[radial-gradient(circle,rgba(15,107,255,0.12),transparent_65%)]"
+    >
+    </div>
+    <div
+      class="absolute right-0 top-10 h-96 w-96 bg-[radial-gradient(circle,rgba(247,183,51,0.12),transparent_62%)]"
+    >
+    </div>
+  </div>
+
+  <div
+    class="relative mx-auto grid max-w-[1500px] gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center"
+  >
+    <div>
+      <p class="text-sm font-black uppercase tracking-wide text-[#d97918]">
+        Overview
+      </p>
+
+      <h2 class="mt-3 max-w-xl text-4xl font-black leading-tight sm:text-5xl">
+        Building Cambodia's
+        <span class="text-[#0b54c8]">Cyber Future</span>
+      </h2>
+
+      <div class="mt-7 max-w-2xl space-y-4 text-base leading-8 text-slate-700">
+        <p>
+          Cambodia National Cybersecurity Competition is one of the initiatives
+          organized and managed by the Ministry of Post and Telecommunications
+          to help build capacity and strengthen cybersecurity talents across
+          the public, private and government sectors.
+        </p>
+        <p>
+          It is also a platform for those who are interested to test their
+          technical skill in the cybersecurity field.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-3">
+        {
+          highlights.map((item) => (
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0f6bff]/10 text-[#0b54c8]">
+                {
+                  item.icon === "rocket" && (
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M4.5 16.5c-1 1.1-1.5 2.5-1.5 4.5 2 0 3.4-.5 4.5-1.5" />
+                      <path d="M8 16 5 13l3.2-3.2a8.5 8.5 0 0 1 5.3-2.4L19 7l-.4 5.5a8.5 8.5 0 0 1-2.4 5.3L13 21l-3-3" />
+                      <path d="M14 8h2v2" />
+                    </svg>
+                  )
+                }
+                {
+                  item.icon === "user" && (
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M20 21a8 8 0 0 0-16 0" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  )
+                }
+                {
+                  item.icon === "network" && (
+                    <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <circle cx="12" cy="12" r="3" />
+                      <circle cx="5" cy="7" r="2" />
+                      <circle cx="19" cy="7" r="2" />
+                      <circle cx="5" cy="18" r="2" />
+                      <circle cx="19" cy="18" r="2" />
+                      <path d="m7 8 3 2" />
+                      <path d="m17 8-3 2" />
+                      <path d="m7 17 3-3" />
+                      <path d="m17 17-3-3" />
+                    </svg>
+                  )
+                }
+              </span>
+              <span>
+                <span class="block text-sm font-black text-[#07143a]">
+                  {item.title}
+                </span>
+                <span class="mt-1 block text-sm leading-5 text-slate-600">
+                  {item.text}
+                </span>
+              </span>
+            </div>
+          ))
+        }
+      </div>
+
+      <a
+        href="#program"
+        class="mt-10 inline-flex items-center gap-2 rounded-md bg-[#0f6bff] px-7 py-3 text-sm font-black uppercase tracking-wide text-white shadow-[0_14px_30px_rgba(15,107,255,0.28)] transition hover:bg-[#2b7dff]"
+      >
+        About CNCC
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="relative pb-20 lg:pb-24">
+      <div
+        class="overflow-hidden rounded-lg border border-white shadow-[0_22px_55px_rgba(7,20,58,0.18)]"
+      >
+        <img
+          src={overviewImage.src}
+          alt="Participants working on cybersecurity challenges during CNCC"
+          class="aspect-[1.72/1] w-full object-cover"
+        />
+      </div>
+
+      <div
+        class="absolute bottom-0 right-0 w-[88%] rounded-lg border border-sky-300/25 bg-[#0b3b92] p-6 text-white shadow-[0_18px_42px_rgba(7,20,58,0.26)] sm:w-[78%] sm:p-7"
+      >
+        <div class="flex items-center gap-5">
+          <span class="text-6xl font-black leading-none text-sky-300/55">
+            “
+          </span>
+          <p class="text-base font-semibold leading-7 sm:text-lg">
+            Empowering the next generation to secure Cambodia's digital
+            tomorrow.
+          </p>
+          <span
+            class="hidden h-20 w-20 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white p-2 sm:flex"
+          >
+            <img src={logo.src} alt="MPTC Logo" class="h-full w-full object-contain" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

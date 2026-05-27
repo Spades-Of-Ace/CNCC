@@ -1,0 +1,109 @@
+---
+import logo from "../assets/logos/mptc.png";
+
+const links = [
+  { label: "Overview", href: "#overview" },
+  { label: "Program", href: "#program" },
+  { label: "Challenge", href: "#challenge" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Roadmap", href: "#roadmap" },
+  { label: "Spotlight", href: "#spotlight" },
+  { label: "Q&A", href: "#faq" },
+];
+---
+
+<nav class="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+  <div
+    class="mx-auto flex max-w-[1660px] items-center justify-between gap-5 rounded-none border border-white/10 bg-[#061a46]/80 px-5 py-3 text-white shadow-[0_18px_50px_rgba(0,10,40,0.35)] backdrop-blur-md sm:px-7 lg:bg-[#03163f]/55"
+  >
+    <a href="/" class="flex min-w-0 items-center gap-3">
+      <span
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-sky-300/30 bg-white/95 p-1 shadow-[0_0_22px_rgba(56,189,248,0.28)]"
+      >
+        <img src={logo.src} alt="MPTC Logo" class="h-full w-full object-contain" />
+      </span>
+
+      <span class="min-w-0 leading-tight">
+        <span class="block text-lg font-black tracking-wide sm:text-xl">
+          Cyber Arena 2026
+        </span>
+        <span class="hidden text-[9px] font-semibold uppercase tracking-[0.11em] text-slate-300 sm:block">
+          Cambodia Cybersecurity Competition
+        </span>
+      </span>
+    </a>
+
+    <div class="hidden items-center justify-center gap-8 text-[13px] font-semibold lg:flex">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-slate-100/90 transition hover:text-[#f7b733]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="hidden shrink-0 items-center gap-3 lg:flex">
+      <a
+        href="/apply"
+        class="rounded-md bg-[#0f6bff] px-7 py-3 text-[12px] font-black uppercase tracking-wide text-white shadow-[0_10px_28px_rgba(15,107,255,0.35)] transition hover:bg-[#2b7dff]"
+      >
+        Application Closed
+      </a>
+      <a
+        href="/rules"
+        class="rounded-md border border-[#f0a72c] px-7 py-3 text-[12px] font-black uppercase tracking-wide text-[#f0a72c] transition hover:bg-[#f0a72c] hover:text-[#041339]"
+      >
+        Rules
+      </a>
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary
+        class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
+        aria-label="Open navigation menu"
+      >
+        <span class="relative h-4 w-5">
+          <span class="absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition group-open:top-2 group-open:rotate-45"></span>
+          <span class="absolute left-0 top-2 h-0.5 w-5 rounded-full bg-current transition group-open:opacity-0"></span>
+          <span class="absolute left-0 top-4 h-0.5 w-5 rounded-full bg-current transition group-open:top-2 group-open:-rotate-45"></span>
+        </span>
+      </summary>
+
+      <div
+        class="absolute right-0 mt-4 w-[min(82vw,320px)] rounded-lg border border-white/10 bg-[#061a46] p-3 shadow-2xl"
+      >
+        <div class="grid gap-1">
+          {
+            links.map((link) => (
+              <a
+                href={link.href}
+                class="rounded-md px-3 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/10 hover:text-[#f7b733]"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="mt-3 grid grid-cols-2 gap-2 border-t border-white/10 pt-3">
+          <a
+            href="/apply"
+            class="rounded-md bg-[#0f6bff] px-3 py-2 text-center text-xs font-black uppercase tracking-wide text-white"
+          >
+            Closed
+          </a>
+          <a
+            href="/rules"
+            class="rounded-md border border-[#f0a72c] px-3 py-2 text-center text-xs font-black uppercase tracking-wide text-[#f0a72c]"
+          >
+            Rules
+          </a>
+        </div>
+      </div>
+    </details>
+  </div>
+</nav>

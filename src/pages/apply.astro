@@ -1,0 +1,171 @@
+---
+import Footer from "../components/Footer.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import applyBackground from "../assets/images/apply background.png";
+
+const steps = ["Personal Info", "Education", "Experience", "Review", "Submit"];
+
+const eligibility = [
+  "Cambodian national",
+  "Under the age of 26",
+  "Student / young professional / government officer / cybersecurity enthusiast",
+  "Passionate about cybersecurity and problem solving",
+];
+
+const dates = [
+  ["Open Registration", "8th May, 2026"],
+  ["Close Application", "8th June, 2026"],
+  ["Confirmation Email", "13th June, 2026"],
+  ["Competition Day", "27th June, 2026"],
+  ["CNCC National Day", "16th August, 2026"],
+];
+---
+
+<MainLayout>
+  <main class="bg-[#f7fbff] text-[#07143a]">
+    <section class="relative isolate overflow-hidden px-6 pb-24 pt-32 text-white sm:px-10 lg:px-16">
+      <img
+        src={applyBackground.src}
+        alt=""
+        class="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#02091b]/88 via-[#02091b]/48 to-transparent"></div>
+
+      <div class="mx-auto max-w-[1500px] py-16">
+        <h1 class="text-5xl font-black uppercase leading-tight sm:text-6xl">
+          Apply Now
+        </h1>
+        <p class="mt-5 text-xl font-black text-slate-100">
+          Be part of Cambodia's cybersecurity future.
+        </p>
+      </div>
+    </section>
+
+    <section class="px-6 py-16 sm:px-10 lg:px-16">
+      <div class="mx-auto max-w-[1500px]">
+        <div class="mx-auto grid max-w-4xl grid-cols-5 gap-3">
+          {
+            steps.map((step, index) => (
+              <div class="text-center">
+                <div
+                  class:list={[
+                    "mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 text-sm font-black",
+                    index === 0
+                      ? "border-[#0f6bff] bg-[#0f6bff] text-white"
+                      : "border-slate-300 bg-slate-100 text-slate-400",
+                  ]}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+                <p
+                  class:list={[
+                    "mt-2 text-xs font-black",
+                    index === 0 ? "text-[#0b54c8]" : "text-slate-400",
+                  ]}
+                >
+                  {step}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-12 grid gap-8 lg:grid-cols-[1fr_0.48fr]">
+          <form class="rounded-xl border border-[#d9e6f7] bg-white p-7 shadow-[0_18px_50px_rgba(7,20,58,0.08)]">
+            <p class="text-sm font-black uppercase tracking-wide text-[#0b54c8]">
+              Personal Information
+            </p>
+
+            <div class="mt-7 grid gap-5">
+              <label class="grid gap-2 text-sm font-black">
+                Full Name *
+                <input class="rounded-md border border-slate-200 px-4 py-3 font-medium outline-none transition focus:border-[#0f6bff]" placeholder="Enter your full name" />
+              </label>
+
+              <label class="grid gap-2 text-sm font-black">
+                Date of Birth *
+                <input type="date" class="rounded-md border border-slate-200 px-4 py-3 font-medium outline-none transition focus:border-[#0f6bff]" />
+              </label>
+
+              <label class="grid gap-2 text-sm font-black">
+                Gender *
+                <select class="rounded-md border border-slate-200 px-4 py-3 font-medium outline-none transition focus:border-[#0f6bff]">
+                  <option>Select your gender</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </label>
+
+              <label class="grid gap-2 text-sm font-black">
+                Phone Number *
+                <input class="rounded-md border border-slate-200 px-4 py-3 font-medium outline-none transition focus:border-[#0f6bff]" placeholder="Enter your phone number" />
+              </label>
+
+              <label class="grid gap-2 text-sm font-black">
+                Email Address *
+                <input type="email" class="rounded-md border border-slate-200 px-4 py-3 font-medium outline-none transition focus:border-[#0f6bff]" placeholder="Enter your email address" />
+              </label>
+
+              <label class="grid gap-2 text-sm font-black">
+                Province / City *
+                <select class="rounded-md border border-slate-200 px-4 py-3 font-medium outline-none transition focus:border-[#0f6bff]">
+                  <option>Select your province / city</option>
+                  <option>Phnom Penh</option>
+                  <option>Siem Reap</option>
+                  <option>Battambang</option>
+                  <option>Other</option>
+                </select>
+              </label>
+            </div>
+
+            <button
+              type="button"
+              class="mt-7 rounded-md bg-[#0f6bff] px-6 py-3 text-sm font-black uppercase tracking-wide text-white shadow-[0_14px_30px_rgba(15,107,255,0.24)] transition hover:bg-[#2b7dff]"
+            >
+              Next Step ->
+            </button>
+          </form>
+
+          <aside class="grid gap-6">
+            <div class="rounded-xl border border-[#d9e6f7] bg-white p-6 shadow-[0_18px_50px_rgba(7,20,58,0.08)]">
+              <p class="text-sm font-black uppercase tracking-wide text-[#0b54c8]">
+                Eligibility
+              </p>
+              <ul class="mt-5 grid gap-4">
+                {
+                  eligibility.map((item) => (
+                    <li class="flex gap-3 text-sm font-semibold leading-6 text-slate-700">
+                      <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0f6bff] text-[10px] font-black text-white">
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="rounded-xl bg-[#06163d] p-6 text-white shadow-[0_18px_50px_rgba(7,20,58,0.16)]">
+              <p class="text-sm font-black uppercase tracking-wide text-[#f7b733]">
+                Important Dates
+              </p>
+              <div class="mt-5 grid gap-4">
+                {
+                  dates.map(([label, date]) => (
+                    <div class="flex justify-between gap-5 text-sm">
+                      <span class="font-black">{label}</span>
+                      <span class="text-right text-slate-300">{date}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>

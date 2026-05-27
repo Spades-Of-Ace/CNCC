@@ -1,0 +1,128 @@
+---
+import logo from "../assets/logos/mptc.png";
+import footerArt from "../assets/images/Hero Background.png";
+
+const quickLinks = [
+  ["Overview", "#overview"],
+  ["Program", "#program"],
+  ["Challenge", "#challenge"],
+  ["Timeline", "#timeline"],
+  ["Roadmap", "#roadmap"],
+  ["Spotlight", "#spotlight"],
+  ["Q&A", "#faq"],
+];
+
+const resources = [
+  ["Apply Now", "/apply"],
+  ["Rules", "/rules"],
+  ["Contact Us", "mailto:cncc@mptc.gov.kh"],
+];
+---
+
+<footer class="relative overflow-hidden bg-[#02091b] px-6 pt-16 text-white sm:px-10 lg:px-16">
+  <img
+    src={footerArt.src}
+    alt=""
+    class="absolute bottom-0 right-0 h-full w-[58%] object-cover object-right-bottom opacity-20"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-[#02091b] via-[#03133a]/98 to-[#03133a]/72"></div>
+
+  <div class="relative mx-auto max-w-[1500px]">
+    <div class="grid gap-10 border-b border-white/10 pb-12 lg:grid-cols-[1.25fr_0.85fr_0.8fr_1.1fr]">
+      <div>
+        <a href="/" class="flex items-center gap-3">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white p-1.5">
+            <img src={logo.src} alt="MPTC Logo" class="h-full w-full object-contain" />
+          </span>
+          <span>
+            <span class="block text-lg font-black uppercase leading-tight">
+              Ministry of Post and Telecommunications
+            </span>
+            <span class="mt-1 block text-xs font-bold uppercase tracking-wide text-slate-400">
+              Cyber Arena 2026
+            </span>
+          </span>
+        </a>
+
+        <p class="mt-5 max-w-sm text-sm leading-7 text-slate-300">
+          Building a secure, connected and digitally empowered Cambodia.
+        </p>
+
+        <div class="mt-5 flex gap-3">
+          {
+            ["f", "x", "in", "yt"].map((label) => (
+              <a
+                href="#"
+                class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-xs font-black text-slate-200 transition hover:bg-[#0f6bff] hover:text-white"
+                aria-label={`Social link ${label}`}
+              >
+                {label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-black uppercase tracking-wide text-white">
+          Quick Links
+        </h2>
+        <div class="mt-5 grid grid-cols-2 gap-x-6 gap-y-3">
+          {
+            quickLinks.map(([label, href]) => (
+              <a
+                href={href}
+                class="text-sm font-medium text-slate-300 transition hover:text-[#f7b733]"
+              >
+                {label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-black uppercase tracking-wide text-white">
+          Resources
+        </h2>
+        <div class="mt-5 grid gap-3">
+          {
+            resources.map(([label, href]) => (
+              <a
+                href={href}
+                class="text-sm font-medium text-slate-300 transition hover:text-[#f7b733]"
+              >
+                {label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-black uppercase tracking-wide text-white">
+          Contact
+        </h2>
+        <div class="mt-5 space-y-3 text-sm leading-6 text-slate-300">
+          <p>
+            <span class="font-black text-[#f7b733]">Email:</span>
+            cncc@mptc.gov.kh
+          </p>
+          <p>
+            <span class="font-black text-[#f7b733]">Phone:</span>
+            +855 23 666 866
+          </p>
+          <p>
+            <span class="font-black text-[#f7b733]">Address:</span>
+            Building 13, Monivong Blvd, Sangkat Srah Chak, Khan Daun Penh,
+            Phnom Penh, Cambodia, 120210
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-5 text-center text-xs text-slate-400">
+      &copy; 2026 Ministry of Post and Telecommunications. All rights reserved.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,131 @@
+---
+const faqs = [
+  [
+    "Who can apply for the competition?",
+    "Students, young professionals, government officers, and other cybersecurity enthusiasts who are under the age of 26 years old, not CTF professionals, and/or like to solve puzzles.",
+  ],
+  [
+    "Is there a maximum number of members for each team?",
+    "Cyber Arena 2026 teams can consist of up to 4 members maximum.",
+  ],
+  [
+    "Can I use my own device for the competition?",
+    "Candidates are asked to bring their own computer and login with their pre-registered account to the competition platform.",
+  ],
+  [
+    "Will it be on-site, online or hybrid?",
+    "Each competition varies from year to year; keep your eyes out for the latest announcement.",
+  ],
+];
+---
+
+<section
+  id="faq"
+  class="relative overflow-hidden bg-white px-6 py-24 text-[#07143a] sm:px-10 lg:px-16"
+>
+  <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#f7fbff] to-transparent"></div>
+
+  <div class="relative mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+    <div>
+      <p class="text-sm font-black uppercase tracking-wide text-[#d97918]">
+        Have Questions?
+      </p>
+      <h2 class="mt-3 text-4xl font-black leading-tight sm:text-5xl">
+        Frequently Asked Questions
+      </h2>
+      <p class="mt-5 max-w-md text-base leading-7 text-slate-600">
+        Find answers to common questions and watch quick explainers about CTF
+        competitions.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <details
+        class="group rounded-lg border border-[#d9e6f7] bg-[#f8fbff] p-6 shadow-sm"
+        open
+      >
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-black">
+          <span>What is CTF?</span>
+          <span class="text-[#0f6bff] transition group-open:rotate-45">+</span>
+        </summary>
+
+        <div class="mt-5 grid gap-5 xl:grid-cols-2">
+          <a
+            href="https://youtu.be/8ev9ZX9J45A?si=0i8N__obsqzN0KqQ"
+            target="_blank"
+            rel="noreferrer"
+            class="group rounded-lg border border-[#d9e6f7] bg-[#06163d] p-5 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(7,20,58,0.18)]"
+          >
+            <span class="flex aspect-video items-center justify-center rounded-md bg-[radial-gradient(circle_at_50%_45%,rgba(15,107,255,0.55),transparent_42%),linear-gradient(135deg,#06163d,#02091b)]">
+              <span class="flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#0f6bff] transition group-hover:scale-105">
+                <svg viewBox="0 0 24 24" class="ml-1 h-8 w-8" fill="currentColor">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </span>
+            </span>
+            <span class="mt-4 block text-sm font-black">
+              CTFs explained in 5 minutes
+            </span>
+            <span class="mt-2 block text-sm text-slate-300">
+              Open on YouTube
+            </span>
+          </a>
+
+          <a
+            href="https://youtu.be/nCMGIR8V-NE?si=dHaZNf_ddQ67ccGg"
+            target="_blank"
+            rel="noreferrer"
+            class="group rounded-lg border border-[#d9e6f7] bg-[#06163d] p-5 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(7,20,58,0.18)]"
+          >
+            <span class="flex aspect-video items-center justify-center rounded-md bg-[radial-gradient(circle_at_50%_45%,rgba(247,183,51,0.35),transparent_42%),linear-gradient(135deg,#06163d,#02091b)]">
+              <span class="flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#0f6bff] transition group-hover:scale-105">
+                <svg viewBox="0 0 24 24" class="ml-1 h-8 w-8" fill="currentColor">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </span>
+            </span>
+            <span class="mt-4 block text-sm font-black">
+              Introduction to security Capture The Flag competitions
+            </span>
+            <span class="mt-2 block text-sm text-slate-300">
+              Open on YouTube
+            </span>
+          </a>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a
+            href="https://youtu.be/8ev9ZX9J45A?si=0i8N__obsqzN0KqQ"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-md bg-[#0f6bff] px-4 py-2 text-sm font-black text-white transition hover:bg-[#2b7dff]"
+          >
+            Watch on YouTube
+            <span aria-hidden="true">-></span>
+          </a>
+          <a
+            href="https://youtu.be/nCMGIR8V-NE?si=dHaZNf_ddQ67ccGg"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-md border border-[#0f6bff] px-4 py-2 text-sm font-black text-[#0b54c8] transition hover:bg-[#0f6bff] hover:text-white"
+          >
+            Second explainer
+            <span aria-hidden="true">-></span>
+          </a>
+        </div>
+      </details>
+
+      {
+        faqs.map(([question, answer]) => (
+          <details class="group rounded-lg border border-[#d9e6f7] bg-[#f8fbff] p-6 shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-5 text-lg font-black">
+              <span>{question}</span>
+              <span class="text-[#0f6bff] transition group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 leading-7 text-slate-600">{answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,140 @@
+---
+import heroBackground from "../../assets/images/Hero Background.png";
+
+const stats = [
+  {
+    value: "600+",
+    label: "Registered",
+    icon: "users",
+  },
+  {
+    value: "100",
+    label: "Selected Candidates",
+    icon: "user",
+  },
+  {
+    value: "5,000,000 Riels",
+    label: "Prize",
+    icon: "trophy",
+  },
+];
+---
+
+<section
+  id="home"
+  class="relative isolate min-h-[760px] overflow-hidden bg-[#02091b] pt-28 text-white sm:pt-32 lg:min-h-[780px]"
+>
+  <img
+    src={heroBackground.src}
+    alt=""
+    class="absolute inset-0 -z-20 h-full w-full object-cover object-[60%_center]"
+  />
+
+  <div
+    class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,9,27,0.98)_0%,rgba(2,9,27,0.82)_33%,rgba(2,9,27,0.28)_68%,rgba(2,9,27,0.18)_100%)]"
+  >
+  </div>
+  <div
+    class="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-[#02091b] via-[#02091b]/70 to-transparent"
+  >
+  </div>
+
+  <div class="mx-auto flex max-w-[1660px] flex-col px-6 sm:px-10 lg:px-16">
+    <div class="max-w-[760px] pt-16 sm:pt-20 lg:pt-24">
+      <p
+        class="mb-5 inline-flex rounded-sm bg-[#f0a72c]/15 px-2.5 py-1 text-[12px] font-black uppercase tracking-wide text-[#f7b733] shadow-[0_0_24px_rgba(240,167,44,0.18)]"
+      >
+        Previous Year CTF Competition
+      </p>
+
+      <h1
+        class="max-w-[730px] text-[44px] font-black uppercase leading-[1.04] tracking-normal text-white sm:text-[64px] lg:text-[76px]"
+      >
+        Cyber Arena
+        <span class="text-[#f7b733]">2026</span>
+      </h1>
+
+      <p class="mt-6 text-lg font-extrabold text-white">
+        Announcing Soon!
+      </p>
+
+      <p class="mt-4 max-w-[620px] text-base leading-7 text-slate-200">
+        Get your team and skill ready for Cambodia's next cybersecurity arena.
+        Until the full 2026 announcement, explore highlights and details from
+        CNCC 2025.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="/apply"
+          class="inline-flex items-center justify-center gap-2 rounded-md bg-[#f7b733] px-8 py-4 text-sm font-black uppercase tracking-wide text-[#06112f] shadow-[0_18px_34px_rgba(247,183,51,0.24)] transition hover:bg-[#ffc85c]"
+        >
+          Application Closed
+        </a>
+
+        <a
+          href="#spotlight"
+          class="inline-flex items-center justify-center rounded-md border border-[#f0a72c] px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#f0a72c] hover:text-[#06112f]"
+        >
+          Watch Highlight
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="mt-16 grid overflow-hidden rounded-xl border border-white/20 bg-[#07194b]/95 shadow-[0_22px_60px_rgba(0,12,43,0.58)] backdrop-blur-md sm:grid-cols-3 lg:mt-24"
+    >
+      {
+        stats.map((stat, index) => (
+          <div
+            class:list={[
+              "flex items-center gap-5 px-7 py-7",
+              index !== 0 && "border-t border-white/10 sm:border-l sm:border-t-0",
+            ]}
+          >
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center text-[#32a7ff]">
+              {
+                stat.icon === "users" && (
+                  <svg viewBox="0 0 24 24" class="h-9 w-9" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 20v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                )
+              }
+              {
+                stat.icon === "user" && (
+                  <svg viewBox="0 0 24 24" class="h-9 w-9" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21a8 8 0 0 0-16 0" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                )
+              }
+              {
+                stat.icon === "trophy" && (
+                  <svg viewBox="0 0 24 24" class="h-9 w-9" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
+                    <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z" />
+                    <path d="M5 6H3a3 3 0 0 0 3 3h1" />
+                    <path d="M19 6h2a3 3 0 0 1-3 3h-1" />
+                  </svg>
+                )
+              }
+            </span>
+
+            <span>
+              <span class="block text-3xl font-black leading-none text-white">
+                {stat.value}
+              </span>
+              <span class="mt-2 block text-sm font-semibold text-slate-200">
+                {stat.label}
+              </span>
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
