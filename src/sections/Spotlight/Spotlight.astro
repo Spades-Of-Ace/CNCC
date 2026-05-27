@@ -4,7 +4,6 @@ import secondPlace from "../../assets/images/CNCC-2nd-Placement-Poster.png";
 import thirdPlace from "../../assets/images/CNCC-3rd-Placement-Poster.png";
 import fourthPlace from "../../assets/images/CNCC-4th-Placement-Poster.png";
 import fifthPlace from "../../assets/images/CNCC-5th-Placement-Poster (2).png";
-import highlightVideo from "../../assets/videos/CNCC Highlight.mp4";
 
 const winners = [
   { title: "1st Place", image: firstPlace },
@@ -150,12 +149,12 @@ const winners = [
         class="overflow-hidden rounded-xl border border-[#d9e6f7] bg-[#06163d] p-3 shadow-[0_18px_50px_rgba(7,20,58,0.16)]"
       >
         <video
-          src={highlightVideo}
           class="aspect-video w-full rounded-lg object-cover"
           controls
           preload="metadata"
           playsinline
         >
+          <source src="/videos/cncc-highlight.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
